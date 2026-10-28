@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Teeth Tattoo | Home</title>
+
+    <script>
+    if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark-mode");
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600&display=block" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">
+    SKIP TO MAIN CONTENT
+</a>
+
+<header>
+    <div class="site-header">
+        <a href="index.html" class="site-logo">ANGEL TEETH TATTOO</a>
+
+        <div class="header-controls">
+
+        <button class="accessibility-button"
+            id="accessibility-button"
+            aria-expanded="false"
+            aria-controls="accessibility-panel">
+            ACCESSIBILITY
+        </button>
+
+        <div class="theme-toggle"
+             aria-label="Colour theme">
+
+            <button class="theme-button"
+                    id="light-theme"
+                    type="button"
+                    aria-label="Use light mode"
+                    aria-pressed="true">
+                ☼
+            </button>
+
+            <button class="theme-button"
+                    id="dark-theme"
+                    type="button"
+                    aria-label="Use dark mode"
+                    aria-pressed="false">
+                ☾
+            </button>
+
+        </div>
+
+        <button class="menu-button"
+                id="menu-button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="main-nav">
+            ☰
+        </button>
+
+    </div>
+
+        <nav class="main-nav" id="main-nav">
+            <a href="index.html"
+                class="active-page"
+                aria-current="page">HOME</a>
+            <a href="portfolio.html">PORTFOLIO</a>
+            <a href="about-me.html">ABOUT ME</a>
+            <a href="services.html">SERVICES</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </div>
+</header>
+
+<div class="accessibility-panel"
+     id="accessibility-panel"
+     aria-hidden="true">
+
+    <div class="accessibility-panel-inner">
+
+        <h2>ACCESSIBILITY</h2>
+
+        <div class="accessibility-option">
+            <h3>READ ALOUD</h3>
+            <p>Listen to the page content.</p>
+
+            <label for="voice-select">VOICE</label>
+
+            <select id="voice-select">
+                <option value="">DEFAULT VOICE</option>
+            </select>
+
+            <div class="accessibility-controls">
+                <button type="button" id="read-start">
+                    START READING
+                </button>
+
+                <button type="button" id="read-stop">
+                    STOP
+                </button>
+            </div>
+        </div>
+
+    <div class="accessibility-option">
+        <h3>TEXT SIZE</h3>
+        <p>Adjust the size of the page text.</p>
+
+        <div class="accessibility-controls">
+            <button type="button" id="text-decrease"
+                    aria-label="Decrease text size">
+                A−
+            </button>
+
+            <button type="button" id="text-reset">
+                RESET
+            </button>
+
+            <button type="button" id="text-increase"
+                    aria-label="Increase text size">
+                A+
+            </button>
+        </div>
+    </div>
+
+    <div class="accessibility-option">
+        <h3>VOICE CONTROL</h3>
+        <p>Navigate selected website features using your voice.</p>
+
+        <div class="accessibility-controls">
+            <button type="button" id="voice-start">
+                START LISTENING
+            </button>
+
+                <p class="voice-status"
+                    id="voice-status"
+                    aria-live="polite">
+                    Voice control ready.
+                </p>
+        </div>
+    </div>
+
+    <div class="accessibility-option">
+        <h3>LANGUAGE</h3>
+        <p>Translate the website into another language.</p>
+
+        <div class="accessibility-controls">
+            <div id="google_translate_element"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<main id="main-content">
+    <section class="hero">
+        <div class="hero-text">
+            <p class="hero-label">TATTOO ARTIST / PAINTER</p>
+
+            <h1>ANGEL TEETH</h1>
+
+            <p class="hero-description">
+                Independent tattoo work and original artwork.
+            </p>
+        </div>
+
+        <div class="hero-image">
+            <img src="images/hero-tattoo.png"
+                 alt="Large abstract black linework back tattoo by Angel Teeth">
+        </div>
+
+        <a href="portfolio.html" class="hero-link">
+            VIEW PORTFOLIO →
+        </a>
+    </section>
+
+    <section class="featured-work">
+
+    <h2>FEATURED TATTOO WORK</h2>
+
+    <div class="tattoo-gallery">
+
+        <div class="gallery-item">
+            <button class="image-expand-button"
+                type="button"
+                aria-label="Enlarge abstract black linework arm tattoo">
+
+            <img src="images/ft-tattoo1.png"
+                class="expandable-image"
+                alt="Abstract black linework arm tattoo by Angel Teeth">
+
+            </button>
+        </div>
+
+        <div class="gallery-item">
+            <button class="image-expand-button"
+                type="button"
+                aria-label="Enlarge large abstract linework back tattoo">
+
+            <img src="images/ft-tattoo2.png"
+                class="expandable-image"
+                alt="Large abstract linework back tattoo by Angel Teeth">
+
+            </button>
+        </div>
+
+        <div class="gallery-item">
+            <button class="image-expand-button"
+                type="button"
+                aria-label="Enlarge Symmetrical black linework leg tattoo">
+
+            <img src="images/ft-tattoo3.png"
+                class="expandable-image"
+                alt="Symmetrical black linework leg tattoo by Angel Teeth">
+
+            </button>
+        </div>
+
+    </div>
+
+    <a href="tattoo-portfolio.html" class="section-link">
+        VIEW FULL PORTFOLIO →
+    </a>
+</section>
+
+<section class="original-artwork">
+    <h2>ORIGINAL ARTWORK</h2>
+
+    <div class="artwork-feature">
+        <div class="artwork-image">
+            <img src="images/featured-artwork.png"
+                 alt="Abstract red and black mixed-media artwork by Angel Teeth">
+        </div>
+
+        <div class="artwork-info">
+            <p class="artwork-type">ORIGINAL ARTWORK / MIXED MEDIA</p>
+
+            <p class="artwork-description">
+                Original paintings and mixed-media works alongside tattoo practice.
+            </p>
+
+            <a href="artwork.html" class="section-link">VIEW ARTWORK →</a>
+        </div>
+    </div>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <p>ANGEL TEETH TATTOO</p>
+        </div>
+
+        <div class="footer-contact">
+            <h3>CONTACT</h3>
+            <a href="mailto:angelte3th@gmail.com">Email</a>
+            <a href="contact.html">Book / Enquire</a>
+        </div>
+
+        <div class="footer-social">
+            <h3>FOLLOW</h3>
+            <a href="https://www.instagram.com/angel_te3th/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Instagram
+            </a>
+            <span>@angel_te3th</span>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; ANGEL TEETH</p>
+    </div>
+</footer>
+
+<button class="back-to-top"
+        id="back-to-top"
+        type="button"
+        aria-label="Back to top">
+    ↑
+</button>
+
+<div class="lightbox"
+     id="lightbox"
+     role="dialog"
+     aria-label="Expanded tattoo image">
+
+    <button class="lightbox-close"
+            id="lightbox-close"
+            aria-label="Close image">&times;</button>
+
+    <img class="lightbox-image"
+         id="lightbox-image"
+         src=""
+         alt="">
+</div>
+
+<script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: "en"
+        }, "google_translate_element");
+    }
+</script>
+
+<script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+</body>
+</html>

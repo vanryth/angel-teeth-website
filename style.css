@@ -1,0 +1,1202 @@
+
+/* normal styles */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #e8e4dc;
+    --surface: #d4d0c8;
+
+    --ink: #171717;
+    --ink-soft: #484642;
+
+    --accent: #792f32;
+    --border: #aaa59c;
+}
+
+html.dark-mode {
+    --background: #171717;
+    --surface: #292826;
+
+    --ink: #e8e4dc;
+    --ink-soft: #b8b3aa;
+
+    --border: #484642;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--ink);
+    font-family: "Inter", sans-serif;
+}
+
+.site-header {
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+}
+
+.site-logo {
+    color: var(--ink);
+    text-decoration: none;
+    font-family: "Barlow Condensed", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    width: 100%;
+}
+
+.site-logo:hover {
+    color: var(--accent);
+}
+
+/* Accessibility panel */
+
+.accessibility-panel {
+    display: none;
+    border-bottom: 1px solid var(--border);
+}
+
+.accessibility-panel.show {
+    display: block;
+}
+
+.accessibility-panel-inner {
+    padding: 40px 32px;
+}
+
+.accessibility-panel-inner > h2 {
+    margin: 0 0 32px;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.accessibility-option {
+    margin-bottom: 32px;
+}
+
+.accessibility-option:last-child {
+    margin-bottom: 0;
+}
+
+.accessibility-option h3 {
+    margin: 0 0 10px;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.accessibility-option p {
+    margin: 0 0 16px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.accessibility-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.accessibility-controls button {
+    background: transparent;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    font-family: "Inter", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+.accessibility-option label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.accessibility-option select {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 10px 14px;
+
+    background: transparent;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+
+    cursor: pointer;
+}
+
+.accessibility-controls button:hover,
+.accessibility-controls button:focus-visible,
+.accessibility-option select:hover,
+.accessibility-option select:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.accessibility-controls button:focus-visible,
+.accessibility-option select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+}
+
+
+
+/* Theme controls */
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.theme-button {
+    padding: 6px;
+    border: none;
+    background: transparent;
+    color: var(--ink);
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.theme-button:hover {
+    color: var(--accent);
+}
+
+html:not(.dark-mode) #light-theme,
+html.dark-mode #dark-theme {
+    color: var(--accent);
+}
+
+.theme-button:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+}
+
+/* Skip link */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 24px;
+    z-index: 2000;
+
+    background: var(--ink);
+    color: var(--background);
+
+    padding: 12px 16px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+/* Main Nav */
+
+.main-nav {
+    display: none;
+    width: 100%;
+}
+
+.main-nav.show {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.main-nav a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+}
+
+/* Accessibility pannel */
+
+.accessibility-button {
+    background: none;
+    border: none;
+    color: var(--ink);
+    font-family: "Inter", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.accessibility-button:hover {
+    color: var(--accent);
+}
+
+.accessibility-button:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+}
+
+.menu-button {
+    background: transparent;
+    border: 1px solid var(--ink);
+    border-radius: 0;
+    color: var(--ink);
+    font-family: "Inter", sans-serif;
+    font-size: 1.4rem;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.menu-button:hover {
+    background-color: var(--ink);
+    color: var(--background);
+}
+
+h1,
+h2,
+h3,
+.site-logo {
+    font-family: "Barlow Condensed", sans-serif;
+    text-transform: uppercase;
+}
+
+.hero {
+    padding: 40px 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-label,
+.section-label {
+    margin: 0 0 8px;
+    color: var(--ink-soft);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+}
+
+.hero h1,
+.about-intro h1,
+.portfolio-intro h1,
+.services-intro h1,
+.contact-intro h1 {
+    margin: 0 0 24px;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+}
+
+.hero-description {
+    margin: 0 0 24px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+}
+
+.hero-image {
+    margin-bottom: 24px;
+}
+
+.hero-image img {
+    display: block;
+    width: 94%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.hero-link {
+    display: inline-block;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+}
+
+.hero-link:hover,
+.section-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* Expandable image lightbox */
+
+.expandable-image {
+    cursor: pointer;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-image {
+    display: block;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    border: none;
+    background: none;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Featured tattoo work */
+
+.featured-work {
+    padding: 48px 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.featured-work h2,
+.original-artwork h2 {
+    margin: 0 0 32px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.tattoo-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.section-link {
+    display: inline-block;
+    margin-top: 32px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+}
+
+.image-expand-button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    appearance: none;
+    cursor: pointer;
+}
+
+.image-expand-button:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+}
+
+/* Original Artwork */
+
+.original-artwork {
+    padding: 48px 32px;
+    border-bottom: 1px solid var(--border);
+}
+
+.artwork-feature {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.artwork-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.artwork-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.artwork-type {
+    margin: 0 0 16px;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.artwork-description {
+    margin: 0 0 28px;
+    max-width: 420px;
+    line-height: 1.6;
+}
+
+/* Portfolio Page */
+
+.portfolio-intro,
+.services-intro,
+.contact-intro {
+    padding: 48px 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.portfolio-category + .portfolio-category {
+    margin-top: 56px;
+}
+
+.portfolio-label {
+    margin: 0 0 12px;
+    color: var(--ink-soft);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+}
+
+.portfolio-description,
+.services-description {
+    max-width: 480px;
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.portfolio-categories {
+    padding: 48px 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.portfolio-category h2 {
+    margin: 0 0 24px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.portfolio-preview {
+    margin-bottom: 24px;
+}
+
+.portfolio-preview img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.portfolio-feature-image {
+    aspect-ratio: 4 / 3;
+}
+
+.portfolio-preview-small {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.portfolio-preview-small img {
+    aspect-ratio: 1 / 1;
+}
+
+.portfolio-category-description {
+    max-width: 480px;
+    margin: 0 0 20px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+}
+
+/* Tattoo portfolio gallery */
+
+.tattoo-portfolio-gallery {
+    padding: 48px 24px;
+}
+
+.tattoo-portfolio-gallery .tattoo-gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.tattoo-portfolio-gallery .gallery-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+/* Tattoo portfolio enquiry */
+
+.portfolio-enquiry {
+    padding: 64px 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.portfolio-enquiry p:not(.section-label) {
+    max-width: 500px;
+    margin: 24px auto;
+    line-height: 1.6;
+}
+
+/* About Me page */
+
+.about-intro {
+    padding: 40px 16px;
+}
+
+.about-intro-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.about-intro h1 {
+    margin-bottom: 12px;
+}
+
+.about-intro h2 {
+    margin: 0 0 16px;
+    font-size: 1.5rem;
+}
+
+.about-intro-text > p:last-child {
+    margin: 0 0 24px;
+}
+
+/* About Me - Studio */
+
+.about-studio {
+    padding: 40px 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.about-studio-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* About Me - Work & Style */
+
+.about-style {
+    padding: 48px 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.about-style h2 {
+    margin: 0 0 24px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.about-style-content p {
+    margin: 0 0 20px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+}
+
+.about-style-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Services Page */
+
+.services-content {
+    padding: 48px 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.service-item h2 {
+    margin: 0 0 24px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.service-item p:not(.section-label) {
+    max-width: 600px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+}
+
+.service-description p:first-child {
+    margin-top: 0;
+}
+
+.service-item + .service-item {
+    margin-top: 48px;
+}
+
+/* Services enquiries */
+
+.services-enquiries {
+    padding: 48px 24px;
+    text-align: center;
+}
+
+.services-enquiries h2 {
+    margin: 0;
+}
+
+.enquiries-description {
+    max-width: 480px;
+    margin: 24px auto;
+    color: var(--ink-soft);
+    line-height: 1.6;
+}
+
+.contact-information {
+    padding: 48px 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.studio-details {
+    margin-top: 48px;
+}
+
+.contact-details a,
+.studio-details a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.contact-details a:hover,
+.studio-details a:hover {
+    color: var(--accent);
+}
+
+.contact-details a:focus-visible,
+.studio-details a:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+}
+
+/* Enquiry guidance */
+
+.enquiry-guidance {
+    padding: 48px 24px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.enquiry-guidance > p {
+    max-width: 700px;
+    margin: 24px auto;
+    line-height: 1.6;
+}
+
+.enquiry-guidance ul {
+    max-width: 560px;
+    margin: 32px auto;
+    padding-left: 24px;
+    text-align: left;
+    line-height: 1.8;
+}
+
+/* Footer */
+
+.site-footer {
+    padding: 40px 32px 24px;
+    border-top: 1px solid var(--border);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.footer-brand p {
+    margin: 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.footer-contact,
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.footer-contact h3,
+.footer-social h3 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+}
+
+.footer-contact a,
+.footer-social a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+}
+
+.footer-contact a:hover,
+.footer-social a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.footer-social span {
+    font-size: 0.9rem;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 100;
+
+    width: 48px;
+    height: 48px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--background);
+    border: 1px solid var(--ink);
+    color: var(--ink);
+
+    font-family: "Inter", sans-serif;
+    font-size: 1.25rem;
+
+    cursor: pointer;
+}
+
+.back-to-top.show {
+    display: flex;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--background);
+}
+
+.back-to-top:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* media styles */
+
+@media (min-width: 768px) {
+    .site-header {
+        padding: 20px 32px;
+    }
+
+    .accessibility-panel-inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px 48px;
+        padding: 48px;
+    }
+
+    .accessibility-panel-inner > h2 {
+        grid-column: 1 / -1;
+        margin-bottom: 8px;
+    }
+
+    .accessibility-option {
+        margin-bottom: 0;
+    }
+
+    .hero {
+        padding: 56px 32px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 48px;
+        align-items: center;
+    }
+
+    .hero-text {
+        grid-column: 1;
+    }
+
+    .hero-image {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        margin-bottom: 0;
+    }
+
+    .hero-image img {
+        width: 100%;
+    }
+
+    .hero-link {
+        grid-column: 1;
+        align-self: start;
+        justify-self: start;
+        margin-top: 32px;
+    }
+
+    .hero h1,
+    .about-intro h1,
+    .portfolio-intro h1,
+    .services-intro h1,
+    .contact-intro h1 {
+        font-size: 4rem;
+    }
+
+    .featured-work {
+        padding: 56px 32px;
+    }
+
+    .tattoo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    
+    .section-link {
+        margin-top: 24px;
+    }
+
+    .gallery-item:nth-child(3) {
+        grid-column: 1 / 3;
+        width: calc(50% - 12px);
+        justify-self: center;
+    }
+
+    .gallery-item img {
+        height: auto;
+    }
+
+    .original-artwork {
+        padding: 56px 32px;
+    }
+
+    .artwork-feature {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 48px;
+        align-items: center;
+    }
+
+    .portfolio-intro,
+    .services-intro,
+    .contact-intro {
+        padding: 56px 32px;
+    }
+
+    .portfolio-categories {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        padding: 56px 32px;
+    }
+
+    .portfolio-category + .portfolio-category {
+        margin-top: 0;
+    }
+
+    .portfolio-category {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .portfolio-category .section-link {
+        margin-top: auto;
+        align-self: flex-start;
+    }
+    
+    .about-intro {
+        padding: 56px 32px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+    }
+
+    .about-studio-image {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .about-style {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        padding: 56px 32px;
+        align-items: start;
+    }
+
+    .services-content {
+        padding: 56px 32px;
+    }
+
+    .services-enquiries {
+        padding: 56px 32px;
+    }
+
+    .tattoo-portfolio-gallery {
+        padding: 56px 32px;
+    }
+
+    .tattoo-portfolio-gallery .tattoo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .tattoo-portfolio-gallery .gallery-item:nth-child(3) {
+        grid-column: auto;
+        width: auto;
+        justify-self: auto;
+    }
+
+    /* Footer */
+
+    .site-footer {
+        padding: 48px 32px 24px;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 48px;
+        align-items: start;
+    }
+
+    .footer-bottom {
+        margin-top: 48px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .site-header {
+        padding: 24px 48px;
+        flex-wrap: nowrap;
+    }
+
+    .accessibility-panel-inner {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    .main-nav {
+        display: flex;
+        width: auto;
+        flex-direction: row;
+        gap: 32px;
+        margin: 0;
+    }
+
+    .main-nav a {
+        font-size: 0.75rem;
+    }
+
+    .hero {
+        padding: 72px 48px;
+        column-gap: 72px;
+    }
+
+    .hero h1,
+    .about-intro h1,
+    .portfolio-intro h1,
+    .services-intro h1,
+    .contact-intro h1 {
+        font-size: 4.5rem;
+    }
+
+    .featured-work {
+        padding: 72px 48px 48px;
+    }
+
+    .tattoo-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .gallery-item:nth-child(3) {
+        grid-column: auto;
+        width: auto;
+        justify-self: auto;
+    }
+
+    .section-link {
+        margin-top: 24px;
+    }
+
+    .portfolio-intro,
+    .services-intro,
+    .contact-intro {
+        padding: 72px 48px;
+    }
+
+    .portfolio-categories {
+        gap: 72px;
+    }
+
+    .portfolio-category h2 {
+        text-align: center;
+    }
+
+    .about-intro {
+        padding: 72px 48px;
+        column-gap: 72px;
+    }
+
+    .about-style {
+        gap: 72px;
+        padding: 72px 48px;
+    }
+
+    .services-content {
+        padding: 72px 48px;
+    }
+
+    .service-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 72px;
+        align-items: start;
+    }
+
+    .artwork-service .service-heading {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .artwork-service .service-description {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .service-item + .service-item {
+        margin-top: 80px;
+    }
+
+    .services-enquiries {
+        padding: 72px 48px;
+    }
+
+
+    .contact-information {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 72px;
+        padding: 72px 48px;
+    }
+
+    .studio-details {
+        margin-top: 0;
+    }
+    
+    .contact-details {
+        margin-bottom: 0;
+    }
+
+    .enquiry-guidance {
+        padding: 72px 48px;
+    }
+
+    .tattoo-portfolio-gallery {
+        padding: 72px 48px;
+    }
+
+    .tattoo-portfolio-gallery .tattoo-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .site-logo,
+    .header-controls {
+        width: auto;
+    }
+
+    .header-controls {
+        justify-content: flex-start;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .site-logo {
+        font-size: 1.35rem;
+    }
+}
+
+.main-nav a:hover,
+.main-nav a.active-page {
+    color: var(--accent);
+}
+

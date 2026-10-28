@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Teeth Tattoo | About Me</title>
+
+    <script>
+    if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark-mode");
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600&display=block" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">
+    SKIP TO MAIN CONTENT
+</a>
+
+<header>
+    <div class="site-header">
+        <a href="index.html" class="site-logo">ANGEL TEETH TATTOO</a>
+
+        <div class="header-controls">
+
+        <button class="accessibility-button"
+            id="accessibility-button"
+            aria-expanded="false"
+            aria-controls="accessibility-panel">
+            ACCESSIBILITY
+        </button>
+
+        <div class="theme-toggle"
+             aria-label="Colour theme">
+
+            <button class="theme-button"
+                    id="light-theme"
+                    type="button"
+                    aria-label="Use light mode"
+                    aria-pressed="true">
+                ☼
+            </button>
+
+            <button class="theme-button"
+                    id="dark-theme"
+                    type="button"
+                    aria-label="Use dark mode"
+                    aria-pressed="false">
+                ☾
+            </button>
+
+        </div>
+
+        <button class="menu-button"
+                id="menu-button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="main-nav">
+            ☰
+        </button>
+
+    </div>
+
+        <nav class="main-nav" id="main-nav">
+            <a href="index.html">HOME</a>
+            <a href="portfolio.html">PORTFOLIO</a>
+            <a href="about-me.html"
+                class="active-page"
+                aria-current="page">ABOUT ME</a>
+            <a href="services.html">SERVICES</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </div>
+</header>
+
+<div class="accessibility-panel"
+     id="accessibility-panel"
+     aria-hidden="true">
+
+    <div class="accessibility-panel-inner">
+
+        <h2>ACCESSIBILITY</h2>
+
+        <div class="accessibility-option">
+            <h3>READ ALOUD</h3>
+            <p>Listen to the page content.</p>
+
+            <label for="voice-select">VOICE</label>
+
+            <select id="voice-select">
+                <option value="">DEFAULT VOICE</option>
+            </select>
+
+            <div class="accessibility-controls">
+                <button type="button" id="read-start">
+                    START READING
+                </button>
+
+                <button type="button" id="read-stop">
+                    STOP
+                </button>
+            </div>
+        </div>
+
+    <div class="accessibility-option">
+        <h3>TEXT SIZE</h3>
+        <p>Adjust the size of the page text.</p>
+
+        <div class="accessibility-controls">
+            <button type="button" id="text-decrease"
+                    aria-label="Decrease text size">
+                A−
+            </button>
+
+            <button type="button" id="text-reset">
+                RESET
+            </button>
+
+            <button type="button" id="text-increase"
+                    aria-label="Increase text size">
+                A+
+            </button>
+        </div>
+    </div>
+
+    <div class="accessibility-option">
+        <h3>VOICE CONTROL</h3>
+        <p>Navigate selected website features using your voice.</p>
+
+        <div class="accessibility-controls">
+            <button type="button" id="voice-start">
+                START LISTENING
+            </button>
+
+                <p class="voice-status"
+                    id="voice-status"
+                    aria-live="polite">
+                    Voice control ready.
+                </p>
+        </div>
+    </div>
+
+    <div class="accessibility-option">
+        <h3>LANGUAGE</h3>
+        <p>Translate the website into another language.</p>
+
+        <div class="accessibility-controls">
+            <div id="google_translate_element"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<main id="main-content">
+    <section class="about-intro">
+
+        <div class="about-intro-text">
+            <p class="section-label">TATTOO ARTIST / PAINTER</p>
+
+            <h1>MEET THE ARTIST</h1>
+
+            <h2>TOA MAKAPELU</h2>
+
+            <p>The artist behind Angel Teeth.</p>
+
+            <p class="hero-description">
+                Toa Makapelu is an artist and tattooist working under the
+                name Angel Teeth. His creative journey began with painting,
+                studying art for three years in Hawke's Bay before continuing
+                his artistic development through further study and studio practice.
+            </p>
+        </div>
+
+        <div class="about-intro-image">
+            <img src="images/toaPortrait.png"
+                 alt="Toa Makapelu standing in front of three large abstract artworks">
+        </div>
+
+    </section>
+
+    <section class="about-studio">
+        <div class="about-studio-image">
+            <img src="images/artist-studio.png"
+                 alt="Toa Makapelu relaxing in his art studio, surrounded by paintings and art materials">
+        </div>
+    </section>
+
+    <section class="about-style">
+        <div class="about-style-heading">
+            <p class="section-label">ARTISTIC APPROACH</p>
+            <h2>MY WORK & STYLE</h2>
+        </div>
+
+        <div class="about-style-content">
+            <p>
+                For Toa, painting and tattooing are different expressions
+                of the same creative process. His work is driven by instinct,
+                experimentation and a preference for bold, expressive imagery.
+            </p>
+
+            <p>
+                Influenced by the dramatic compositions and darker themes
+                of artists such as Francisco Goya, Toa embraces scale,
+                texture and movement. His background in oil painting
+                continues to shape his artistic approach, while his
+                tattooing process remains flexible, ranging from freehand
+                designs drawn directly onto the skin to carefully prepared
+                artwork developed with the client.
+            </p>
+        </div>
+    </section>
+</main>
+<footer class="site-footer">
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <p>ANGEL TEETH TATTOO</p>
+        </div>
+
+        <div class="footer-contact">
+            <h3>CONTACT</h3>
+            <a href="mailto:angelte3th@gmail.com">Email</a>
+            <a href="contact.html">Book / Enquire</a>
+        </div>
+
+        <div class="footer-social">
+            <h3>FOLLOW</h3>
+            <a href="https://www.instagram.com/angel_te3th/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Instagram
+            </a>
+            <span>@angel_te3th</span>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; ANGEL TEETH</p>
+    </div>
+</footer>
+
+<button class="back-to-top"
+        id="back-to-top"
+        type="button"
+        aria-label="Back to top">
+    ↑
+</button>
+
+<div class="lightbox"
+     id="lightbox"
+     role="dialog"
+     aria-label="Expanded tattoo image">
+
+    <button class="lightbox-close"
+            id="lightbox-close"
+            aria-label="Close image">&times;</button>
+
+    <img class="lightbox-image"
+         id="lightbox-image"
+         src=""
+         alt="">
+</div>
+
+<script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: "en"
+        }, "google_translate_element");
+    }
+</script>
+
+<script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+</body>
+</html>
